@@ -11,8 +11,8 @@ class Category extends Model
 
     protected $fillable = ['name'];
 
-    public function forms()
+    public function forums()
     {
-        return $this->belongsToMany(Form::class);
+        return $this->belongsToMany(Forum::class);
     }
 }

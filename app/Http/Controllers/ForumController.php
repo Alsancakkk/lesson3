@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Form;
+use App\Models\Forum;
 use App\Models\Category;
 
-class FormController extends Controller
+class ForumController extends Controller
 {
     public function create()
     {
         $categories = Category::all();
-        return view('forms.create', compact('categories'));
+        return view('forums.create', compact('categories'));
     }
 
     public function store(Request $request)
@@ -22,10 +22,10 @@ class FormController extends Controller
             'categories.*' => 'exists:categories,id',
         ]);
 
-        $form = Form::create(['name' => $request->input('name')]);
+        $forum = Forum::create(['name' => $request->input('name')]);
 
-        $form->categories()->attach($request->input('categories'));
+        $forum->categories()->attach($request->input('categories'));
 
-        return redirect()->route('forms.create')->with('success', 'The form has been successfully created and linked to categories.');
+        return redirect()->route('forums.create')->with('success', 'The form has been successfully created and linked to categories.');
     }
 }

@@ -25,6 +25,22 @@ class CategoryController extends Controller
         ]);
 
         Category::create($request->all());
-        return redirect()->route('home')->with('success', 'Category created successfully.');
+        return redirect()->route('categories.index')->with('success', 'Category created successfully.');
+    }
+
+    public function edit(Category $category)
+    {
+        return view('categories.edit', compact('category'));
+    }
+
+    public function update(Request $request, Category $category)
+    {
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        $category->update($request->all());
+        return redirect()->route('categories.index')
+            ->with('success', 'Category updated successfully.');
     }
 }

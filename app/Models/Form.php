@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Form extends Model
 {
     use HasFactory;
 
     protected $fillable = ['name'];
 
-    public function forms()
+    public function categories()
     {
-        return $this->belongsToMany(Form::class);
+        return $this->belongsToMany(Category::class);
     }
 }

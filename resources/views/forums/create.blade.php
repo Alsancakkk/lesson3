@@ -30,7 +30,7 @@
                         @endforeach
                     </select>
                 </div>
-
+                <a href="{{ route('categories.index') }}" class="btn btn-primary">Back</a>
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
         </div>

@@ -9,7 +9,7 @@
         <tr>
             <th scope="col">Category Name</th>
             <th scope="col">Description</th>
-            <th scope="col">Forums</th>
+            <th scope="col">Forum Count</th>
 
         </tr>
     </thead>
@@ -18,17 +18,7 @@
         <tr>
             <td>{{ $category->name }}</td>
             <td>{{ $category->description }}</td>
-            <td>
-                @if($category->forums->isEmpty())
-                <span>No forums</span>
-                @else
-                <ul>
-                    @foreach($category->forums as $forum)
-                    <li>{{ $forum->name }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </td>
+            <td>{{ $category->forums->count() }}</td>
             <td>
                 <form action="{{ route('category.destroy', $category->id) }}" method="POST" style="display:inline-block;">
                     @csrf

@@ -33,7 +33,7 @@
         @endforeach
     </tbody>
 </table>
-<a href="{{ route('post.create') }}" class="btn btn-primary">Create Post</a>
+<a href="{{ route('post.create') }}" class="btn btn-primary">Create Forum</a>
 @if (session('success'))
 <div class="alert alert-success">
     {{ session('success') }}

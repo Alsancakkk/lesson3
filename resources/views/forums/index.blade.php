@@ -3,7 +3,7 @@
 @section('title', 'Web')
 
 @section('content')
-
+<h1 style="text-align:center">Forums</h1>
 <table class="table table-dark">
     <thead>
         <tr>

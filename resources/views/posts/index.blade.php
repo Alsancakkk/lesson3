@@ -10,6 +10,7 @@
             <th scope="col">Post Name</th>
             <th scope="col">Description</th>
             <th scope="col">Forum Name</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>

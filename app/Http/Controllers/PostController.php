@@ -44,15 +44,17 @@ class PostController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'forum_id' => 'required|exists:forum,id',
+            'description' => 'required|string',
+            'forum_id' => 'required|exists:forums,id',
         ]);
 
         $post = Post::findOrFail($id);
-        $post->Post::update($validatedData);
+        $post->update($validatedData);
 
-        return redirect()->route('posthome')->with('success', 'Post updated successfully');
+        return redirect()->route('posthome')->with('success', 'Post updated successfully.');
     }
+
+
 
     public function destroy($id)
     {

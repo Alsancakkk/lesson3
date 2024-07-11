@@ -16,10 +16,10 @@
         <input type="text" class="form-control" id="Post" name="description" value="{{ $post->description }}">
     </div>
     <div class="form-group">
-        <label for="category_id">Category</label>
-        <select name="category_id" id="forum_id" class="form-control" required>
+        <label for="forum_id">Forum</label>
+        <select name="forum_id" id="forum_id" class="form-control" required>
             @foreach($forums as $forum)
-            <option value="{{ $post->id }}">{{ $post->name }}</option>
+            <option value="{{ $forum->id }}">{{ $forum->name }}</option>
             @endforeach
         </select>
     </div>
